@@ -141,10 +141,10 @@ function ResetPasswordForm() {
         .login-card {
           width: 100%;
           max-width: 480px;
-          background-color: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background-color: var(--bg-surface);
+          border: 1px solid var(--border-subtle);
           padding: clamp(2rem, 5vw, 3rem);
-          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
           display: flex;
           flex-direction: column;
         }
@@ -161,8 +161,8 @@ function ResetPasswordForm() {
           width: 56px;
           height: 56px;
           border-radius: 50%;
-          background: rgba(181, 142, 78, 0.12);
-          border: 1px solid rgba(181, 142, 78, 0.35);
+          background: rgba(216, 186, 132, 0.12);
+          border: 1px solid rgba(216, 186, 132, 0.3);
           color: var(--accent-gold);
           display: flex;
           align-items: center;
@@ -171,24 +171,26 @@ function ResetPasswordForm() {
         }
 
         .login-eyebrow {
-          font-family: var(--font-sans);
           font-size: 0.6875rem;
           letter-spacing: 0.22em;
           text-transform: uppercase;
           color: var(--accent-gold);
+          font-weight: 600;
           margin-bottom: 0.5rem;
         }
 
         .login-title {
-          font-family: var(--font-serif);
-          font-size: 2rem;
-          color: #FAF8F5;
+          font-family: var(--font-sans);
+          font-size: 1.85rem;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: var(--text-primary);
           margin-bottom: 0.4rem;
         }
 
         .login-subtitle {
           font-size: 0.875rem;
-          color: #A39E96;
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
@@ -198,19 +200,37 @@ function ResetPasswordForm() {
           gap: 1.25rem;
         }
 
-        .login-card :global(.form-label) {
-          color: #D2CABE;
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          gap: 0.45rem;
         }
 
-        .login-card :global(.form-input) {
-          background-color: #161514;
-          border-color: rgba(255, 255, 255, 0.15);
-          color: #FAF8F5;
+        .form-label {
+          font-size: 0.75rem;
+          font-weight: 500;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--text-secondary);
         }
 
-        .login-card :global(.form-input:focus) {
+        .form-input {
+          width: 100%;
+          background-color: #061824;
+          border: 1px solid var(--border-subtle);
+          color: var(--text-primary);
+          padding: 0.85rem 1rem;
+          font-family: inherit;
+          font-size: 0.9375rem;
+          border-radius: 2px;
+          outline: none;
+          transition: border-color 0.25s, box-shadow 0.25s;
+        }
+
+        .form-input:focus {
           border-color: var(--accent-gold);
-          background-color: #121110;
+          box-shadow: 0 0 0 1px var(--accent-gold);
+          background-color: #041420;
         }
 
         .login-btn {
@@ -219,7 +239,9 @@ function ResetPasswordForm() {
           margin-top: 0.5rem;
           background-color: var(--accent-gold);
           border-color: var(--accent-gold);
-          color: #FFFFFF;
+          color: #03111B;
+          font-weight: 600;
+          cursor: pointer;
         }
 
         .login-btn:hover {
@@ -236,15 +258,15 @@ function ResetPasswordForm() {
         }
 
         .alert-error {
-          background: rgba(155, 59, 59, 0.15);
-          border: 1px solid rgba(155, 59, 59, 0.35);
-          color: #F8B4B4;
+          background: rgba(244, 67, 54, 0.1);
+          border: 1px solid rgba(244, 67, 54, 0.3);
+          color: #E57373;
         }
 
         .alert-success {
-          background: rgba(56, 106, 70, 0.15);
-          border: 1px solid rgba(56, 106, 70, 0.35);
-          color: #B2D8BD;
+          background: rgba(76, 175, 80, 0.1);
+          border: 1px solid rgba(76, 175, 80, 0.3);
+          color: #81C784;
         }
 
         .alert-body {
@@ -254,9 +276,9 @@ function ResetPasswordForm() {
         }
 
         .success-heading {
-          font-family: var(--font-serif);
-          font-size: 1.25rem;
-          color: #FAF8F5;
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: var(--text-primary);
         }
 
         .alert-text {
@@ -271,19 +293,25 @@ function ResetPasswordForm() {
 export default function AdminResetPasswordPage() {
   return (
     <div className="login-viewport">
-      <Suspense fallback={<div style={{ color: "#FAF8F5" }}>Loading reset form...</div>}>
+      <Suspense fallback={<div className="login-loading">Loading reset portal...</div>}>
         <ResetPasswordForm />
       </Suspense>
 
       <style jsx>{`
         .login-viewport {
           min-height: 100vh;
-          background: linear-gradient(180deg, #181615 0%, #121110 100%);
+          background: linear-gradient(180deg, #03111B 0%, #020C13 100%);
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 2rem 1.5rem;
-          color: #FAF8F5;
+          color: var(--text-primary);
+          font-family: var(--font-sans);
+        }
+
+        .login-loading {
+          color: var(--text-secondary);
+          font-size: 0.875rem;
         }
       `}</style>
     </div>

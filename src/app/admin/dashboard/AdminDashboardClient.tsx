@@ -1980,8 +1980,9 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         .admin-layout {
           display: flex;
           min-height: 100vh;
-          background-color: #141312;
-          color: #FAF8F5;
+          background-color: var(--bg-primary);
+          color: var(--text-primary);
+          font-family: var(--font-sans);
         }
 
         /* Toast */
@@ -1996,27 +1997,27 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           padding: 1rem 1.5rem;
           border-radius: 2px;
           font-size: 0.875rem;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
           animation: slideIn 0.3s ease-out;
         }
 
         .toast-success {
-          background-color: #243F2D;
-          border: 1px solid #386A46;
-          color: #D2EBD9;
+          background-color: rgba(76, 175, 80, 0.15);
+          border: 1px solid rgba(76, 175, 80, 0.35);
+          color: #81C784;
         }
 
         .toast-error {
-          background-color: #4A1E1E;
-          border: 1px solid #7F2D2D;
-          color: #F8D2D2;
+          background-color: rgba(244, 67, 54, 0.15);
+          border: 1px solid rgba(244, 67, 54, 0.35);
+          color: #E57373;
         }
 
         /* Sidebar */
         .admin-sidebar {
           width: 280px;
-          background-color: #1B1918;
-          border-right: 1px solid rgba(255, 255, 255, 0.08);
+          background-color: #061824;
+          border-right: 1px solid var(--border-subtle);
           display: flex;
           flex-direction: column;
           flex-shrink: 0;
@@ -2024,7 +2025,7 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .sidebar-brand-box {
           padding: 2rem 1.5rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          border-bottom: 1px solid var(--border-subtle);
           display: flex;
           flex-direction: column;
           gap: 1.25rem;
@@ -2034,32 +2035,34 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           display: flex;
           flex-direction: column;
           text-decoration: none;
-          color: #FAF8F5;
+          color: var(--text-primary);
         }
 
         .brand-name {
-          font-family: var(--font-serif);
+          font-family: var(--font-sans);
           font-size: 1.25rem;
-          letter-spacing: 0.16em;
+          font-weight: 800;
+          letter-spacing: 0.12em;
           text-transform: uppercase;
         }
 
         .brand-badge {
           font-family: var(--font-sans);
           font-size: 0.625rem;
+          font-weight: 600;
           letter-spacing: 0.22em;
           color: var(--accent-gold);
-          margin-top: 2px;
+          margin-top: 3px;
         }
 
         .admin-profile-pill {
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          background: rgba(255, 255, 255, 0.04);
+          background: rgba(255, 255, 255, 0.03);
           padding: 0.65rem 0.85rem;
           border-radius: 4px;
-          border: 1px solid rgba(255, 255, 255, 0.06);
+          border: 1px solid var(--border-subtle);
         }
 
         .admin-avatar {
@@ -2067,12 +2070,12 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           height: 32px;
           border-radius: 50%;
           background: var(--accent-gold);
-          color: #FFFFFF;
+          color: #03111B;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 0.75rem;
-          font-weight: 600;
+          font-weight: 700;
         }
 
         .admin-info {
@@ -2083,13 +2086,13 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .admin-name {
           font-size: 0.8125rem;
-          font-weight: 500;
-          color: #FAF8F5;
+          font-weight: 600;
+          color: var(--text-primary);
         }
 
         .admin-email {
           font-size: 0.6875rem;
-          color: #8A857D;
+          color: var(--text-muted);
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -2109,10 +2112,10 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           gap: 0.85rem;
           width: 100%;
           padding: 0.8rem 1rem;
-          border-radius: 4px;
+          border-radius: 2px;
           font-family: var(--font-sans);
           font-size: 0.875rem;
-          color: #A39E96;
+          color: var(--text-secondary);
           transition: all 0.2s;
           background: none;
           border: none;
@@ -2121,14 +2124,14 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .nav-btn:hover {
-          color: #FAF8F5;
+          color: var(--text-primary);
           background: rgba(255, 255, 255, 0.04);
         }
 
         .nav-btn.active {
-          color: #FAF8F5;
-          background: rgba(181, 142, 78, 0.15);
-          font-weight: 500;
+          color: var(--text-primary);
+          background: rgba(216, 186, 132, 0.12);
+          font-weight: 600;
           border-left: 3px solid var(--accent-gold);
         }
 
@@ -2141,16 +2144,16 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .badge-new {
           background-color: var(--accent-gold);
-          color: #FFFFFF;
+          color: #03111B;
           font-size: 0.6875rem;
-          font-weight: 600;
+          font-weight: 700;
           padding: 0.15rem 0.55rem;
           border-radius: 9999px;
         }
 
         .sidebar-footer {
           padding: 1.5rem;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          border-top: 1px solid var(--border-subtle);
           display: flex;
           flex-direction: column;
           gap: 0.75rem;
@@ -2161,13 +2164,13 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           align-items: center;
           gap: 0.65rem;
           font-size: 0.8125rem;
-          color: #A39E96;
+          color: var(--text-muted);
           text-decoration: none;
           transition: color 0.2s;
         }
 
         .footer-action-link:hover {
-          color: #FAF8F5;
+          color: var(--text-primary);
         }
 
         .logout-btn {
@@ -2175,7 +2178,7 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           align-items: center;
           gap: 0.65rem;
           font-size: 0.8125rem;
-          color: #D67A7A;
+          color: #E57373;
           background: none;
           border: none;
           cursor: pointer;
@@ -2193,23 +2196,25 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           display: flex;
           flex-direction: column;
           min-width: 0;
-          background-color: #141312;
+          background-color: var(--bg-primary);
         }
 
         .admin-topbar {
           height: var(--header-height);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          border-bottom: 1px solid var(--border-subtle);
           padding: 0 clamp(1.5rem, 4vw, 3rem);
           display: flex;
           align-items: center;
           justify-content: space-between;
-          background-color: #181615;
+          background-color: #061824;
         }
 
         .topbar-title {
-          font-family: var(--font-serif);
-          font-size: 1.65rem;
-          color: #FAF8F5;
+          font-family: var(--font-sans);
+          font-size: 1.5rem;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: var(--text-primary);
         }
 
         .btn-sm {
@@ -2238,8 +2243,8 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .metric-card {
-          background-color: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background-color: var(--bg-surface);
+          border: 1px solid var(--border-subtle);
           padding: 1.75rem;
           display: flex;
           flex-direction: column;
@@ -2247,34 +2252,37 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .highlight-metric {
-          border-color: rgba(181, 142, 78, 0.35);
-          background: linear-gradient(180deg, rgba(181, 142, 78, 0.1) 0%, #1F1D1B 100%);
+          border-color: rgba(216, 186, 132, 0.35);
+          background: linear-gradient(180deg, rgba(216, 186, 132, 0.08) 0%, var(--bg-surface) 100%);
         }
 
         .metric-label {
           font-size: 0.75rem;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: #8A857D;
+          color: var(--text-muted);
+          font-weight: 500;
         }
 
         .metric-val {
-          font-family: var(--font-serif);
+          font-family: var(--font-sans);
           font-size: 2.75rem;
-          color: #FAF8F5;
+          font-weight: 800;
+          color: var(--text-primary);
           line-height: 1;
           margin: 0.25rem 0;
+          letter-spacing: -0.03em;
         }
 
         .metric-sub {
           font-size: 0.75rem;
-          color: #A39E96;
+          color: var(--text-secondary);
         }
 
         /* Quick actions */
         .quick-actions-card {
-          background-color: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background-color: var(--bg-surface);
+          border: 1px solid var(--border-subtle);
           padding: 1.75rem;
           display: flex;
           flex-direction: column;
@@ -2282,9 +2290,10 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .card-heading {
-          font-family: var(--font-serif);
-          font-size: 1.35rem;
-          color: #FAF8F5;
+          font-family: var(--font-sans);
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: var(--text-primary);
         }
 
         .actions-btn-row {
@@ -2297,11 +2306,12 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           display: inline-flex;
           align-items: center;
           gap: 0.65rem;
-          background-color: #272522;
-          color: #FAF8F5;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background-color: #0E2435;
+          color: var(--text-primary);
+          border: 1px solid var(--border-subtle);
           padding: 0.75rem 1.25rem;
           font-size: 0.8125rem;
+          font-weight: 500;
           cursor: pointer;
           transition: all 0.2s;
         }
@@ -2309,6 +2319,7 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         .action-btn:hover {
           background-color: var(--accent-gold);
           border-color: var(--accent-gold);
+          color: #03111B;
         }
 
         /* Dashboard 2-col */
@@ -2319,8 +2330,8 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .dash-col {
-          background-color: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background-color: var(--bg-surface);
+          border: 1px solid var(--border-subtle);
           padding: 1.75rem;
           display: flex;
           flex-direction: column;
@@ -2340,6 +2351,7 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           font-size: 0.75rem;
           text-transform: uppercase;
           letter-spacing: 0.1em;
+          font-weight: 600;
           cursor: pointer;
         }
 
@@ -2351,17 +2363,18 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .inquiry-mini-card {
           padding: 1rem;
-          background: #181615;
-          border: 1px solid rgba(255, 255, 255, 0.06);
+          background: #061824;
+          border: 1px solid var(--border-subtle);
           display: flex;
           align-items: center;
           justify-content: space-between;
           cursor: pointer;
-          transition: border-color 0.2s;
+          transition: border-color 0.2s, background-color 0.2s;
         }
 
         .inquiry-mini-card:hover {
           border-color: rgba(255, 255, 255, 0.2);
+          background-color: #0E2435;
         }
 
         .mini-left {
@@ -2371,14 +2384,14 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .mini-name {
-          font-weight: 500;
+          font-weight: 600;
           font-size: 0.9375rem;
-          color: #FAF8F5;
+          color: var(--text-primary);
         }
 
         .mini-shoot {
           font-size: 0.75rem;
-          color: #8A857D;
+          color: var(--text-muted);
         }
 
         .mini-right {
@@ -2390,7 +2403,7 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .mini-date {
           font-size: 0.6875rem;
-          color: #615C55;
+          color: var(--text-muted);
         }
 
         .project-mini-card {
@@ -2398,8 +2411,8 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           align-items: center;
           gap: 1rem;
           padding: 0.85rem;
-          background: #181615;
-          border: 1px solid rgba(255, 255, 255, 0.06);
+          background: #061824;
+          border: 1px solid var(--border-subtle);
         }
 
         .mini-cover {
@@ -2417,12 +2430,13 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .mini-proj-title {
           font-size: 0.875rem;
-          color: #FAF8F5;
+          font-weight: 500;
+          color: var(--text-primary);
         }
 
         .mini-proj-cat {
           font-size: 0.75rem;
-          color: #8A857D;
+          color: var(--text-muted);
         }
 
         .mini-proj-actions {
@@ -2438,24 +2452,25 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         /* Tables */
         .table-card {
-          background-color: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background-color: var(--bg-surface);
+          border: 1px solid var(--border-subtle);
           display: flex;
           flex-direction: column;
         }
 
         .table-header-bar {
           padding: 1.5rem 2rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          border-bottom: 1px solid var(--border-subtle);
           display: flex;
           align-items: center;
           justify-content: space-between;
         }
 
         .table-title {
-          font-family: var(--font-serif);
-          font-size: 1.35rem;
-          color: #FAF8F5;
+          font-family: var(--font-sans);
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: var(--text-primary);
         }
 
         .table-responsive {
@@ -2471,17 +2486,18 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .admin-table th {
           padding: 1rem 1.5rem;
-          color: #8A857D;
+          color: var(--text-muted);
           font-size: 0.75rem;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          border-bottom: 1px solid var(--border-subtle);
+          font-weight: 600;
         }
 
         .admin-table td {
           padding: 1.15rem 1.5rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-          color: #FAF8F5;
+          border-bottom: 1px solid var(--border-subtle);
+          color: var(--text-primary);
           vertical-align: middle;
         }
 
@@ -2497,13 +2513,13 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .table-proj-title {
-          font-weight: 500;
-          color: #FAF8F5;
+          font-weight: 600;
+          color: var(--text-primary);
         }
 
         .table-proj-slug {
           font-size: 0.75rem;
-          color: #8A857D;
+          color: var(--text-muted);
         }
 
         .cat-pill {
@@ -2513,6 +2529,7 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           font-size: 0.6875rem;
           letter-spacing: 0.06em;
           text-transform: uppercase;
+          color: var(--text-secondary);
         }
 
         .photo-count-badge {
@@ -2522,20 +2539,22 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           background: rgba(255, 255, 255, 0.06);
           padding: 0.35rem 0.75rem;
           border-radius: 4px;
-          color: #FAF8F5;
+          color: var(--text-primary);
           font-size: 0.75rem;
           border: none;
           cursor: pointer;
+          transition: background-color 0.2s;
         }
 
         .photo-count-badge:hover {
           background: var(--accent-gold);
+          color: #03111B;
         }
 
         .star-btn {
           background: none;
           border: none;
-          color: #4A4640;
+          color: rgba(255, 255, 255, 0.2);
           cursor: pointer;
         }
 
@@ -2556,23 +2575,23 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .status-new {
-          background: rgba(181, 142, 78, 0.2);
-          color: #E2B771;
+          background: rgba(216, 186, 132, 0.2);
+          color: var(--accent-gold);
         }
 
         .status-contacted {
-          background: rgba(70, 130, 180, 0.2);
-          color: #92C2EC;
+          background: rgba(144, 202, 249, 0.15);
+          color: #90CAF9;
         }
 
         .status-booked {
-          background: rgba(56, 106, 70, 0.25);
-          color: #A3D8B0;
+          background: rgba(76, 175, 80, 0.2);
+          color: #81C784;
         }
 
         .status-archived {
-          background: rgba(100, 100, 100, 0.2);
-          color: #A39E96;
+          background: rgba(255, 255, 255, 0.08);
+          color: var(--text-muted);
         }
 
         .row-actions {
@@ -2585,7 +2604,7 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         .action-icon-btn, .action-icon-link {
           background: none;
           border: none;
-          color: #8A857D;
+          color: var(--text-muted);
           cursor: pointer;
           display: inline-flex;
           align-items: center;
@@ -2594,15 +2613,15 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .action-icon-btn:hover, .action-icon-link:hover {
-          color: #FAF8F5;
+          color: var(--text-primary);
         }
 
         .text-danger {
-          color: #C85A5A !important;
+          color: #E57373 !important;
         }
 
         .text-danger:hover {
-          color: #E87A7A !important;
+          color: #EF5350 !important;
         }
 
         /* Photo Curator */
@@ -2611,8 +2630,8 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           align-items: center;
           justify-content: space-between;
           padding: 1.5rem 2rem;
-          background: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--bg-surface);
+          border: 1px solid var(--border-subtle);
           gap: 1.5rem;
           flex-wrap: wrap;
         }
@@ -2625,16 +2644,20 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .picker-label {
           font-size: 0.8125rem;
-          color: #8A857D;
+          color: var(--text-muted);
           text-transform: uppercase;
           letter-spacing: 0.08em;
+          font-weight: 500;
         }
 
         .project-dropdown {
-          background: #141312;
-          color: #FAF8F5;
-          border-color: rgba(255, 255, 255, 0.15);
+          background: #061824;
+          color: var(--text-primary);
+          border: 1px solid var(--border-subtle);
+          padding: 0.65rem 1rem;
+          border-radius: 2px;
           min-width: 320px;
+          font-family: inherit;
         }
 
         .hidden-input {
@@ -2652,8 +2675,8 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .curator-card {
-          background: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--bg-surface);
+          border: 1px solid var(--border-subtle);
           display: flex;
           flex-direction: column;
           overflow: hidden;
@@ -2662,7 +2685,7 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         .curator-thumb-wrap {
           position: relative;
           aspect-ratio: 16 / 11;
-          background: #141312;
+          background: #061824;
         }
 
         .curator-img {
@@ -2675,11 +2698,12 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           position: absolute;
           top: 0.5rem;
           left: 0.5rem;
-          background: rgba(0, 0, 0, 0.7);
-          color: #FAF8F5;
+          background: rgba(3, 17, 27, 0.8);
+          color: var(--text-primary);
           font-size: 0.6875rem;
           padding: 0.15rem 0.5rem;
           border-radius: 2px;
+          backdrop-filter: blur(4px);
         }
 
         .curator-overlay-actions {
@@ -2693,9 +2717,9 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         .curator-btn {
           width: 28px;
           height: 28px;
-          background: rgba(0, 0, 0, 0.75);
-          color: #FAF8F5;
-          border: none;
+          background: rgba(3, 17, 27, 0.85);
+          color: var(--text-primary);
+          border: 1px solid rgba(255, 255, 255, 0.1);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -2717,14 +2741,14 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .curator-caption-snippet {
           font-size: 0.75rem;
-          color: #C2BCB2;
+          color: var(--text-secondary);
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
 
         .no-caption {
-          color: #615C55;
+          color: var(--text-muted);
           font-style: italic;
         }
 
@@ -2736,28 +2760,31 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .btn-tiny {
-          background: #282522;
-          color: #FAF8F5;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 0.25rem 0.6rem;
+          background: #0E2435;
+          color: var(--text-primary);
+          border: 1px solid var(--border-subtle);
+          padding: 0.3rem 0.65rem;
           font-size: 0.6875rem;
           cursor: pointer;
           border-radius: 2px;
+          transition: background-color 0.2s;
         }
 
         .btn-tiny:hover {
           background: var(--accent-gold);
+          color: #03111B;
         }
 
         .btn-tiny-danger:hover {
-          background: #7F2D2D !important;
+          background: rgba(244, 67, 54, 0.3) !important;
+          color: #E57373;
         }
 
         .empty-photos-box {
           padding: 5rem 2rem;
           text-align: center;
-          background: #1F1D1B;
-          border: 1px dashed rgba(255, 255, 255, 0.15);
+          background: var(--bg-surface);
+          border: 1px dashed var(--border-medium);
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -2786,20 +2813,22 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .status-filter-tab {
           padding: 0.5rem 1rem;
-          background: #1F1D1B;
-          color: #8A857D;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--bg-surface);
+          color: var(--text-secondary);
+          border: 1px solid var(--border-subtle);
           font-size: 0.75rem;
           text-transform: uppercase;
           letter-spacing: 0.08em;
           cursor: pointer;
           border-radius: 2px;
+          transition: all 0.2s;
         }
 
         .status-filter-tab.active {
           background: var(--accent-gold);
-          color: #FFFFFF;
+          color: #03111B;
           border-color: var(--accent-gold);
+          font-weight: 600;
         }
 
         .search-wrap {
@@ -2812,17 +2841,22 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           left: 1rem;
           top: 50%;
           transform: translateY(-50%);
-          color: #8A857D;
+          color: var(--text-muted);
         }
 
         .search-input {
           width: 100%;
-          background: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.12);
+          background: var(--bg-surface);
+          border: 1px solid var(--border-subtle);
           padding: 0.65rem 1rem 0.65rem 2.5rem;
-          color: #FAF8F5;
+          color: var(--text-primary);
           font-size: 0.8125rem;
           border-radius: 2px;
+          outline: none;
+        }
+
+        .search-input:focus {
+          border-color: var(--accent-gold);
         }
 
         /* Settings Form */
@@ -2833,8 +2867,8 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .settings-section-card {
-          background: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--bg-surface);
+          border: 1px solid var(--border-subtle);
           padding: 2rem;
           display: flex;
           flex-direction: column;
@@ -2848,8 +2882,8 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .upload-btn-inline {
           white-space: nowrap;
-          color: #FAF8F5;
-          border-color: rgba(255, 255, 255, 0.2);
+          color: var(--text-primary);
+          border-color: var(--border-medium);
         }
 
         .save-bar {
@@ -2860,14 +2894,17 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .save-btn {
           padding: 1.15rem 2.75rem;
+          background-color: var(--accent-gold);
+          color: #03111B;
+          font-weight: 600;
         }
 
         /* Modal Styles */
         .admin-modal-backdrop {
           position: fixed;
           inset: 0;
-          background: rgba(10, 9, 8, 0.88);
-          backdrop-filter: blur(10px);
+          background: rgba(3, 17, 27, 0.9);
+          backdrop-filter: blur(12px);
           z-index: 10000;
           display: flex;
           align-items: center;
@@ -2877,19 +2914,19 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .admin-modal-card {
-          background-color: #1F1D1B;
-          border: 1px solid rgba(255, 255, 255, 0.12);
+          background-color: var(--bg-surface);
+          border: 1px solid var(--border-medium);
           width: 100%;
           max-width: 680px;
           max-height: 90vh;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
         }
 
         .admin-modal-header {
           padding: 1.5rem 2rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          border-bottom: 1px solid var(--border-subtle);
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -2900,23 +2937,25 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           letter-spacing: 0.18em;
           text-transform: uppercase;
           color: var(--accent-gold);
+          font-weight: 600;
         }
 
         .modal-heading {
-          font-family: var(--font-serif);
-          font-size: 1.6rem;
-          color: #FAF8F5;
+          font-family: var(--font-sans);
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--text-primary);
         }
 
         .close-modal-btn {
           background: none;
           border: none;
-          color: #8A857D;
+          color: var(--text-muted);
           cursor: pointer;
         }
 
         .close-modal-btn:hover {
-          color: #FAF8F5;
+          color: var(--text-primary);
         }
 
         .admin-modal-body {
@@ -2929,8 +2968,8 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
 
         .admin-modal-footer {
           padding: 1.25rem 2rem;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-          background: #181615;
+          border-top: 1px solid var(--border-subtle);
+          background: #061824;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -2943,27 +2982,30 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .btn-whatsapp {
-          background: #25633C;
-          border-color: #25633C;
+          background: #2E7D32;
+          border-color: #2E7D32;
+          color: #FFFFFF;
         }
 
         .btn-whatsapp:hover {
-          background: #1E4E30;
+          background: #1B5E20;
         }
 
         .inquiry-status-selector-row {
           display: flex;
           align-items: center;
           gap: 1rem;
-          background: #141312;
+          background: #061824;
           padding: 1rem 1.25rem;
-          border: 1px solid rgba(255, 255, 255, 0.06);
+          border: 1px solid var(--border-subtle);
         }
 
         .status-dropdown {
-          background: #1E1D1B;
-          color: #FAF8F5;
-          border-color: rgba(255, 255, 255, 0.15);
+          background: var(--bg-surface);
+          color: var(--text-primary);
+          border: 1px solid var(--border-subtle);
+          padding: 0.5rem 1rem;
+          border-radius: 2px;
           width: auto;
         }
 
@@ -2971,9 +3013,9 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 1.25rem;
-          background: #141312;
+          background: #061824;
           padding: 1.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.06);
+          border: 1px solid var(--border-subtle);
         }
 
         .info-item {
@@ -2986,12 +3028,13 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           font-size: 0.6875rem;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: #8A857D;
+          color: var(--text-muted);
+          font-weight: 500;
         }
 
         .info-val {
           font-size: 0.875rem;
-          color: #FAF8F5;
+          color: var(--text-primary);
         }
 
         .info-link {
@@ -3003,9 +3046,9 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         }
 
         .inquiry-message-card {
-          background: #141312;
+          background: #061824;
           padding: 1.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.06);
+          border: 1px solid var(--border-subtle);
           display: flex;
           flex-direction: column;
           gap: 0.75rem;
@@ -3014,21 +3057,21 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
         .message-content {
           font-size: 0.9375rem;
           line-height: 1.7;
-          color: #FAF8F5;
+          color: var(--text-primary);
           white-space: pre-wrap;
         }
 
         .notes-area {
-          background: #141312;
-          border-color: rgba(255, 255, 255, 0.12);
-          color: #FAF8F5;
+          background: #061824;
+          border-color: var(--border-subtle);
+          color: var(--text-primary);
           min-height: 90px;
         }
 
         .preview-wrap {
           width: 100%;
           aspect-ratio: 16 / 10;
-          background: #141312;
+          background: #061824;
           overflow: hidden;
         }
 
@@ -3050,7 +3093,7 @@ export default function AdminDashboardClient({ admin }: AdminDashboardClientProp
           align-items: center;
           gap: 0.75rem;
           font-size: 0.875rem;
-          color: #FAF8F5;
+          color: var(--text-primary);
           cursor: pointer;
         }
 
