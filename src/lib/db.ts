@@ -3,20 +3,46 @@ import path from "path";
 import fs from "fs";
 import bcrypt from "bcryptjs";
 
-const DB_DIR = path.join(process.cwd(), "data");
-if (!fs.existsSync(DB_DIR)) {
-  fs.mkdirSync(DB_DIR, { recursive: true });
-}
+function getDatabasePath(): string {
+  const isVercel = Boolean(process.env.VERCEL);
+  if (isVercel) {
+    const tmpDbPath = path.join("/tmp", "portfolio.db");
+    if (!fs.existsSync(tmpDbPath)) {
+      const bundledPath = path.join(process.cwd(), "data", "portfolio.db");
+      if (fs.existsSync(bundledPath)) {
+        try {
+          fs.copyFileSync(bundledPath, tmpDbPath);
+        } catch (err) {
+          console.warn("[Vercel DB]: Could not copy bundled DB to /tmp, will initialize from code:", err);
+        }
+      }
+    }
+    return tmpDbPath;
+  }
 
-const DB_PATH = path.join(DB_DIR, "portfolio.db");
+  const localDir = path.join(process.cwd(), "data");
+  if (!fs.existsSync(localDir)) {
+    try {
+      fs.mkdirSync(localDir, { recursive: true });
+    } catch {
+      // ignore if exists
+    }
+  }
+  return path.join(localDir, "portfolio.db");
+}
 
 // Singleton connection
 let dbInstance: Database.Database | null = null;
 
 export function getDb(): Database.Database {
   if (!dbInstance) {
-    dbInstance = new Database(DB_PATH);
-    dbInstance.pragma("journal_mode = WAL");
+    const dbPath = getDatabasePath();
+    dbInstance = new Database(dbPath);
+    try {
+      dbInstance.pragma("journal_mode = WAL");
+    } catch {
+      // WAL mode may fallback on some virtual environments
+    }
     dbInstance.pragma("foreign_keys = ON");
     initSchema(dbInstance);
     seedData(dbInstance);

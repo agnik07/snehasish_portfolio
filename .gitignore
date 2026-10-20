@@ -41,9 +41,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# sqlite database
-*.db
+# sqlite temporary files (WAL and SHM)
 *.db-shm
 *.db-wal
-data/*.db*
-!data/.gitkeep
+data/*.db-shm
+data/*.db-wal
